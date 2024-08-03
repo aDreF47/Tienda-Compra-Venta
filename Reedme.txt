@@ -1,0 +1,99 @@
+
+------------------------------
+README detallado nuestro proyecto:
+
+---
+
+Proyecto Java con SQL Server
+
+Descripción
+
+Este proyecto Java se conecta a una base de datos SQL Server utilizando JDBC. 
+Se requiere configurar NetBeans 19, JDK 17, SQL Server 2022, SSMS 20.0, JavaFX, SceneBuilder22 y JDBC 12.2.jre8.jar para su correcto funcionamiento.
+
+Requisitos
+
+Antes de comenzar, asegúrate de tener instalados los siguientes programas:
+
+1. NetBeans 19: Entorno de desarrollo integrado (IDE) para desarrollar aplicaciones en Java.
+2. JDK 17: Kit de desarrollo de Java necesario para compilar y ejecutar el código Java.
+3. SQL Server 2022 (versión 20): Sistema de gestión de bases de datos relacional.
+4. SSMS 20: SQL Server Management Studio, herramienta para gestionar SQL Server.
+5. JDBC 12.2.jre8.jar: Controlador JDBC para la conexión a SQL Server.
+6. JavaFX 22: Biblioteca de gráficos y medios de Java.
+7. SceneBuilder 22: Herramienta de diseño visual para construir interfaces de usuario JavaFX.
+
+Configuración del Entorno
+
+Paso 1: Instalación de NetBeans 19
+
+1. Descarga NetBeans 19 desde (https://netbeans.apache.org/download/index.html).
+2. Sigue las instrucciones del instalador para completar la instalación.
+
+Paso 2: Instalación del JDK 17
+
+1. Descarga JDK 17 desde (https://www.oracle.com/java/technologies/javase-jdk17-downloads.html).
+2. Sigue las instrucciones del instalador para completar la instalación.
+3. Asegúrate de que la variable de entorno JAVA_HOME esté configurada correctamente apuntando al directorio de instalación del JDK.
+
+Paso 3: Instalación de SQL Server 2022
+
+1. Descarga SQL Server 2022 desde (https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
+2. Sigue las instrucciones del instalador para completar la instalación.
+3. Durante la instalación, configura la autenticación de SQL Server y crea un usuario y contraseña (por ejemplo, userSQL y 123456).
+
+Paso 4: Instalación de SSMS 20.0
+
+1. Descarga SSMS 20.0 desde el (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms).
+2. Sigue las instrucciones del instalador para completar la instalación.
+
+Paso 5: Configuración de la Base de Datos
+
+1. Abre SSMS y conéctate a tu servidor SQL Server.
+2. Crea una nueva base de datos llamada dpPrueba.
+3. Importa las tablas y datos necesarios en la base de datos dpPrueba.
+
+Paso 6: Configuración de JDBC
+
+1. Descarga el archivo JDBC 12.2.jre8.jar desde (https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
+2. Copia el archivo JDBC 12.2.jre8.jar en el directorio de bibliotecas de tu proyecto en NetBeans.
+3. Añade el archivo JAR al classpath de tu proyecto en NetBeans:
+    - Haz clic derecho en el proyecto.
+    - Selecciona Propiedades.
+    - Ve a Bibliotecas.
+    - Haz clic en Añadir JAR/Carpeta y selecciona el archivo JDBC 12.2.jre8.jar.
+
+Paso 7: Instalación de JavaFX y SceneBuilder
+
+1. Descarga JavaFX 22 desde (https://gluonhq.com/products/javafx/).
+2. Configura JavaFX en NetBeans:
+    - Ve a Propiedades del proyecto.
+    - En Libraries, crear una librería con el nombre "JavaFX22"
+    - Añadir los módulos de JavaFX descargados en esa librería.
+    - Entrar a "Run", en VM Options colocar : --module-path "La dirección de lib de JavaFX" --add-modules javafx.controls,javafx.fxml -Djava.security.policy=applet.policy
+3. Descarga SceneBuilder 22 desde (https://gluonhq.com/products/scene-builder/).
+4. Configura SceneBuilder en NetBeans:
+    - Ve a Herramientas > Opciones > Java > JavaFX.
+    - Establece la ruta a SceneBuilder.
+
+Configuración de la Conexión a la Base de Datos
+
+En tu proyecto Java, asegúrate de que los parámetros de conexión estén configurados correctamente:
+
+java
+String user = "userSQL";
+String password = "123456";
+String bd = "dpPrueba";
+String ip = "localhost";
+String puerto = "1433";
+String url = "jdbc:sqlserver://" + ip + ":" + puerto + ";databaseName=" + bd + ";encrypt=false;trustServerCertificate=true";
+
+
+Ejecución del Proyecto
+
+1. Asegúrate de que SQL Server esté en ejecución.
+2. Ejecuta tu proyecto en NetBeans haciendo clic en el botón Ejecutar.
+
+
+
+
